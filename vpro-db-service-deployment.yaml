@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -47,16 +46,16 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: vpro-db-data
-
-  ---
-  apiVersion: v1
-  kind: Service
-  metadata:
-    name: vprodb
-  spec:
-    ports:
-      - port: 3306
-        targetPort: vprodb-port
-        protocol: TCP
-    selector:
-      app: vprodb
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vprodb
+spec:
+  ports:
+    - port: 3306
+      targetPort: vprodb-port
+      protocol: TCP
+  selector:
+    app: vprodb
+  type: ClusterIP
