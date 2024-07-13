@@ -39,6 +39,8 @@ spec:
             volumeID: vol-09e703df409cce734
             fsType: ext4
 #  aws ec2 create-volume --availability-zone=us-east-1a --size=3 --volume-type=gp2
+#      Tag the volume
+#      Name: KubernetesCluster -> Value: Kubernetes Cluster Name
       initContainers:
         - name: busybox
           image: busybox:latest
